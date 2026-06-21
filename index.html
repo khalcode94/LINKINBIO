@@ -357,10 +357,14 @@
     <div id="custom-cursor-dot"></div>
 
     <div class="container">
-      
-          
+        <!-- شريط HUD المطور لعرض حالة النظام بديناميكية تامة -->
+        <div class="hud-system-bar">
+            <div class="hud-status-indicator">
+                <span class="status-dot"></span>
+                <span>SYSTEM ONLINE</span>
             </div>
-
+            <div id="hud-ping-display">PING: -- ms</div>
+            <div id="hud-fps-display">FPS: 60</div>
         </div>
 
         <header class="profile-header" id="main-header">
@@ -741,7 +745,8 @@
 
         // === 📡 محاكاة وتحديث شريط البيانات الحي الـ HUD (FPS & Ping Simulation) ===
         function startDiagnosticsHUD() {
-    
+            const pingDisplay = document.getElementById('hud-ping-display');
+            const fpsDisplay = document.getElementById('hud-fps-display');
             
             // تحديث قيمة الـ Ping عشوائياً كشاشات الألعاب السريعة
             setInterval(() => {
